@@ -15,12 +15,13 @@ import {
   Button
 } from 'react-native';
 
-
 const App = () => {
   const handlePress = async () => {
     const supported = await Linking.canOpenURL('https://metamask.app.link/dapp/web3-proof-of-conceptst.herokuapp.com/');
     if (supported)
       Linking.openURL('https://metamask.app.link/dapp/web3-proof-of-conceptst.herokuapp.com/');
+    else
+      Linking.openURL('dapp://web3-proof-of-conceptst.herokuapp.com/');
 }
   return (
     <SafeAreaView>
